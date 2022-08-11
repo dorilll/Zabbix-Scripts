@@ -1,7 +1,7 @@
 #!/bin/sh
 #===============================================================================
 #         FILE: install-on-ubuntu-20-arm64-zabbix-server-ngnix-external-mysql
-#        USAGE: curl -ks https://raw.githubusercontent.com/wuilber002/Zabbix-Scripts/master/install/install-zbxServer-ngnix-mysql_ubuntu20-arm64.sh|bash -s -- <mysql_address> <mysql_root_passwd>
+#        USAGE: curl -ks https://raw.githubusercontent.com/dorilll/Zabbix-Scripts/master/install/install-zbxServer-ngnix-mysql_ubuntu20-arm64.sh|bash -s -- <mysql_address> <mysql_root_passwd>
 #
 #  DESCRIPTION: Script de instalacao para o Zabbix Server/Agent2 5.4 com nginx e
 #               mysql instalado em servidor diferentes.
@@ -49,7 +49,7 @@ fi
 printf "[ ${GREEN}OK${RESET} ] Parametros de configuracao\n" 2>&1 | tee --append ${log}
 
 printf "[${GREEN}INFO${RESET}] Download e configuracao do reposito do Zabbix\n" 2>&1 | tee --append ${log}
-wget https://repo.zabbix.com/zabbix/5.4/ubuntu-arm64/pool/main/z/zabbix-release/zabbix-release_5.4-1+ubuntu20.04_all.deb -O /tmp/zabbix-release.deb 1>>${log} 2>&1
+wget https://repo.zabbix.com/zabbix/6.0/ubuntu-arm64/pool/main/z/zabbix-release/zabbix-release_6.0-1%2Bubuntu20.04_all.deb -O /tmp/zabbix-release.deb 1>>${log} 2>&1
 dpkg -i /tmp/zabbix-release.deb 1>>${log} 2>&1
 rm -f /tmp/zabbix-release.deb 1>>${log} 2>&1
 apt-get update 1>>${log} 2>&1
